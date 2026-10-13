@@ -288,10 +288,13 @@ def render(data: dict, template: str) -> str:
     for topic in topics:
         projects = [project for project in candidates if project["topic"] == topic]
         identifier = topic_id(topic)
+        count_label = localized(
+            f"{len(projects)} projects", f"{len(projects)} 个选题", extra=' class="topic-count"'
+        )
         groups.append(
             f'<section class="topic-group" id="{identifier}" data-topic="{escape(topic)}" aria-labelledby="{identifier}-title">'
             f'<h3 class="topic-title" id="{identifier}-title">{localized(topic, TOPIC_ZH[topic])} '
-            f'{localized(f"{len(projects)} projects", f"{len(projects)} 个选题")}</h3>'
+            f'{count_label}</h3>'
             + "\n".join(cards[project["id"]] for project in projects) + '</section>'
         )
         topic_links.append(f'<li><a href="#{identifier}">{localized(topic, TOPIC_ZH[topic])} <span>{len(projects)}</span></a></li>')

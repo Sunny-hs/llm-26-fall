@@ -1815,8 +1815,8 @@
         "note": "Use small CPU tensors and cap the entire sweep’s live allocations at 256 MB. Keep measured storage and process-memory observations separate. No model download, training, or GPU run is required.",
         "note_zh": "使用小型 CPU 张量，整个扫描过程中的存活分配量限制在 256 MB。区分实测张量存储与进程内存；无需下载或训练模型，也不需要 GPU。"
       },
-      "title_zh": "缓存显存估算器能预测实测分配量吗？",
-      "summary_zh": "用受控的 CPU 张量实验构建并测试缓存显存估算器。",
+      "title_zh": "缓存内存估算器能预测实测分配量吗？",
+      "summary_zh": "用受控的 CPU 张量实验构建并测试缓存内存估算器。",
       "question_zh": "简单的缓存大小公式何时能预测实际存活张量的存储量？偏差来自哪里？"
     },
     {
